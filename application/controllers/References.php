@@ -17,6 +17,11 @@ class References extends CI_Controller {
 		$query = $this->db->query('SELECT * FROM centre_hospitalier');
 		$data2['countCH'] = $query->num_rows();
 		$data2['listCH'] = $query->result_array();
+		// $result = $query->result_array();
+		// foreach ($result as $key => $value) {
+		// 	$data2['listCH'][$key] = $value;
+		// }
+		
 		//imeuble et centre comlmerciaux
 		$query = $this->db->query('SELECT * FROM immeuble_et_cc');
 		$data2['countIC'] = $query->num_rows();

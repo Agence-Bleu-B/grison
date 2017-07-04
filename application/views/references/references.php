@@ -26,12 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
-          <span class="badge">Ephad Delivet Ducey</span>
-          <span class="badge">CHP Plérin</span>
-          <span class="badge">Centre de Thalasso à Granville</span>
-          <span class="badge">Ephad Maurice Peigné à Quévert</span>
-          <span class="badge">Hôpital Quintin</span>
-          <span class="badge">Résidences Séniors Les Girandières à Saint Malo</span>
+          <?php foreach ($listCH as $key => $value) { ?>
+          <span class="badge"><?php echo $value['titre']; ?></span>
+          <?php } ?>
         </div>
         <div id="sliderCat1" class="lity-hide">
           <div id="carousel-cat1" class="carousel slide" data-ride="carousel">
@@ -88,7 +85,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
-          <span class="badge">Carré Feydeau - Nantes</span>
+          <?php foreach ($listIC as $key => $value) { ?>
+          <span class="badge"><?php echo $value['titre']; ?></span>
+          <?php } ?>
         </div>
       </div>
       <?php } ?>
@@ -110,11 +109,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
-          <span class="badge">Bibliothèque Multimédia à Vocation Régional à Caen</span>
-          <span class="badge">Vélodrome de Saint Quentin</span>
-          <span class="badge">Le Jeu de Paume de Blois</span>
-          <span class="badge">Bibliothèque et Archipel Habitat à Rennes</span>
-          <span class="badge">Les Ateliers des Capucins à Brest</span>
+          <?php foreach ($listCC as $key => $value) { ?>
+          <span class="badge"><?php echo $value['titre']; ?></span>
+          <?php } ?>
         </div>
       </div>
       <?php } ?>
