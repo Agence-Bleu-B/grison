@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <header class="container">
   <div class="row">
     <h1 class="col-xs-12 col-md-3">
-      <a href="index.html">
+      <a href="<?php echo site_url('accueil'); ?>">
         <img src="<?php echo img_url("grison_logo.png"); ?>" class="img-responsive">
       </a>
     </h1>

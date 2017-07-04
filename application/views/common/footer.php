@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <br>
       <div class="col-md-6">
         <address class="text-center">
-          <img src="grison_logo.png" class="img-responsive center-block">
+          <img src="<?php echo img_url('grison_logo.png'); ?>" class="img-responsive center-block">
           <br>
           Zone Artisanale 22690 LA VICOMTÉ-SUR-RANCE<br>
           Tél : 02 96 41 99 76 - Fax : 09 89 54 36 96<br>
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </address>
       </div>
       <div class="col-md-6">
-        <img src="locaux.png" class="img-responsive center-block">
+        <img src="<?php echo img_url('locaux.png'); ?>" class="img-responsive center-block">
       </div>
     </div>
   </div>
