@@ -60,11 +60,11 @@ class Admin extends CI_Controller {
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);
-			$this->load->view('admin/home',$this->data2);
+			$this->load->view('admin/realisations',$this->data2);
 		}
 		else{
 			$this->load->view('admin/header-reg',$this->data);
-			$this->load->view('admin/realisations',$this->data2);
+			$this->load->view('admin/register',$this->data2);
 		}
        $this->load->view('admin/footer');
 	}

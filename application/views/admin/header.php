@@ -44,10 +44,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a href="<?php echo site_url('admin'); ?>" ><i class="fa fa-desktop "></i>Accueil</a>
                     </li>
                     <li <?php if ($pagecours == 'realisations') {echo 'class="active-link"';}?>>
-                        <a href="#"><i class="fa fa-th-list"></i>Réalisations</a>
+                        <a href="<?php echo site_url('admin/realisations'); ?>"><i class="fa fa-th-list"></i>Réalisations</a>
                     </li>
                     <li <?php if ($pagecours == 'pages') {echo 'class="active-link"';}?>>
-                        <a href="#"><i class="fa fa-edit"></i>Pages</a>
+                        <a href="<?php echo site_url('admin/pages'); ?>"><i class="fa fa-edit"></i>Pages</a>
                     </li>
                 </ul>
             </div>
