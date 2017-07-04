@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
               <div class="div-square">
                   <a href="blank.html" >
-                    <i class="fa fa-picture-o fa-5x"></i>
+                    <i class="fa fa-th-list fa-5x"></i>
                   <h4>Réalisations</h4>
                 </a>
               </div>
