@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+
 <section id="content" class="container-fluid">
   <!-- SLIDER -->
   <div id="slider" class="row">
@@ -56,42 +57,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="row">
     <div class="col-md-12 col-lg-8 col-lg-offset-2">
-      <h2 class="title">Vous rechercher un partenaire fiable et compétent ?</h2>
+      <h2 class="title">Contact</h2>
       <br>
-      <p class="lead col-md-6 text-justify">
-        Nous avons des équipes fiables et réactives à votre
-        service avec une expertise suivie et assurée.
-        <br>
-        Nous vous accompagnons dans tous vos projets
-        spécifiques, avec l’assurance d’une étude préalable
-        sur sites et d’un devis personnalisé sous 48H.
-      </p>
-      <ul class="col-md-5 col-md-offset-1">
-        <p class="lead title">Nos domaines de compétences :</p>
-        <li>Pose de gaine de désenfumage, conduit horizontal et vertical</li>
-        <li>Pose de coffrages de protection incendie(gaines gaz, gaines tôle, chemin de câbles...)</li>
-        <li>Pose de manchettes et pré-cadres</li>
-        <li>Pose de clapets coupe-feu</li>
-        <li>La fourniture des matériaux concernant la protection incendie.</li>
-      </ul>
+
+      <div class="row">
+        <form class="col-xs-12 col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Sujet</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Sujet">
+          </div>
+          <div class="form-group">
+            <label for="exampleText">Message</label><br>
+            <textarea class="form-control" rows="3" id="exampleText" name="msg" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+        <div class="col-xs-12 col-md-6">
+          <div class="map_responsive">
+            <iframe frameborder="0" style="border: 0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2644.196724446364!2d-1.97885798433857!3d48.49111957925316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480e8ece08ac13dd%3A0xea62c6beba927332!2sZone+Artisanale%2C+22690+La+Vicomt%C3%A9-sur-Rance!5e0!3m2!1sfr!2sfr!4v1498135759468" allowfullscreen="true"></iframe>
+          </div>
+        </div>
+      </div>
+      <br>
     </div>
 
-    <blockquote class="col-md-12 col-lg-8 col-lg-offset-2">
-      Nos produits sont certifiés conformes aux normes européennes en vigueur. Sans amiante et 100% naturel, Résistance au feu A1 selon EN 13501-1
-    </blockquote>
-  </div>
-  <div class="row products-show">
-    <div class="col-md-12 col-lg-8 col-lg-offset-2">
-      <img src="<?php echo img_url("product3.png"); ?>" class="img-responsive">
-      <img src="<?php echo img_url("product2.png"); ?>" class="img-responsive">
-      <img src="<?php echo img_url("product1.png"); ?>" class="img-responsive">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 col-lg-8 col-lg-offset-2">
-      <br>
-      <p class="lead title col-md-6 text-justify vertical-align-item">Notre société travaille dans divers secteurs d’activité (Hospitalier, Immobilier, Ephad, Industrie, Lycée) et nous intervenons dans toute la France.</p><!--
-      --><img src="<?php echo img_url("carte.png"); ?>" class="col-md-6 img-responsive vertical-align-item">
-    </div>
   </div>
 </section>
