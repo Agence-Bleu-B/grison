@@ -10,9 +10,23 @@ class Accueil extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('');
-		$this->load->view('');
-	    $this->load->view('');
-	    $this->load->view('');
+		$this->load->view('common/head');
+		$this->load->view('common/header');
+	    $this->load->view('accueil/home');
+	    $this->load->view('common/footer');
+	}
+	public function references()
+	{
+		$this->load->view('common/head');
+		$this->load->view('common/header');
+	    $this->load->view('accueil/home');
+	    $this->load->view('common/footer');
+	}
+	public function contact()
+	{
+		$this->load->view('common/head');
+		$this->load->view('common/header');
+	    $this->load->view('accueil/home');
+	    $this->load->view('common/footer');
 	}
 }
