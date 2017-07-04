@@ -43,32 +43,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  					<li <?php if ($pagecours == 'index') {echo 'class="active-link"';}?>>
                         <a href="<?php echo site_url('admin'); ?>" ><i class="fa fa-desktop "></i>Accueil</a>
                     </li>
-                    <li <?php if ($pagecours == 'actu' || $pagecours == 'creation' || $pagecours == 'modifactu'  ) {echo 'class="active-link"';}?>>
-                        <a href="<?php echo site_url('admin/actu'); ?>"><i class="fa fa-newspaper-o "></i>Actualités</a>
+                    <li <?php if ($pagecours == 'realisations') {echo 'class="active-link"';}?>>
+                        <a href="#"><i class="fa fa-picture-o"></i>Réalisations</a>
                     </li>
-                    <li <?php if ($pagecours == 'gestionpersonnel'||$pagecours == 'modifperso') {echo 'class="active-link"';}?>>
-                        <a href="<?php echo site_url('admin/gestionpersonnel'); ?>"><i class="fa fa-users "></i>Personnel CCAS</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i>Statistiques</a>
-                    </li>
-                    <li>
+                    <li <?php if ($pagecours == 'pages') {echo 'class="active-link"';}?>>
                         <a href="#"><i class="fa fa-edit"></i>Pages</a>
-                    </li>
-                    <li <?php if ($pagecours == 'documents'||$pagecours == 'gestionimg'||$pagecours == 'gestionpdf') {echo 'class="active-link"';}?>>
-                        <a href="<?php echo site_url('admin/documents'); ?>"><i class="fa fa-book"></i>Documents</a>
                     </li>
                 </ul>
             </div>
-            <?php if ($pagecours == 'creation' || $pagecours == 'modifactu'  ){ ?>
-			<div class="sidemedia">
-				<p class="sidemediatitre">Medias</p>
-				<div class="sidemediabloc">
-					<?php foreach ($medias as $key => $value) { ?><img class="img-responsive" src="<?php echo img_url('medias/'.$value) ;?>">
-						
-					<?php } ?>
-				</div>
-			</div>
-			<?php } ?>
         </nav>
         <!-- /. NAV SIDE  -->
