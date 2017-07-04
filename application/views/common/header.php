@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-xs-12 col-md-9">
       <!-- <h3 class="col-md-12"><small>Pose de conduits de désenfumage</small></h3> -->
       <nav class="h3 text-center">
-        <a href="<?php echo site_url('accueil'); ?>" class="col-xs-12 col-sm-4 actif">Accueil</a>
-        <a href="<?php echo site_url('accueil/references'); ?>" class="col-xs-12 col-sm-4">Références</a>
-        <a href="<?php echo site_url('accueil/contact'); ?>" class="col-xs-12 col-sm-4">Contact</a>
+        <a href="<?php echo site_url('accueil'); ?>" class="col-xs-12 col-sm-4 <?php if ($pagecours == 'accueil') echo 'actif' ?>">Accueil</a>
+        <a href="<?php echo site_url('references'); ?>" class="col-xs-12 col-sm-4 <?php if ($pagecours == 'references') echo 'actif' ?>">Références</a>
+        <a href="<?php echo site_url('contact'); ?>" class="col-xs-12 col-sm-4 <?php if ($pagecours == 'contact') echo 'actif' ?>">Contact</a>
       </nav>
     </div>
   </div>

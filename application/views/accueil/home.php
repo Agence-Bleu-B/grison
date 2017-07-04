@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               De nombreux partenaires nous on fait confiance !
               <br>
             </p>
-            <a href="<?php echo site_url("accueil/references"); ?>" class="btn btn-primary">Découvrez nos réalisations</a>
+            <a href="<?php echo site_url("references"); ?>" class="btn btn-primary">Découvrez nos réalisations</a>
           </div>
         </div>
         <div class="item">
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <img src="<?php echo img_url("slider/slid2.jpg"); ?>" class="">
           <div class="carousel-caption">
             <h2 class="text-left">Nous intervenons sur toute la france</h2>
-            <a href="<?php echo site_url("accueil/contact"); ?>" class="btn btn-primary">Contactez nous</a>
+            <a href="<?php echo site_url("contact"); ?>" class="btn btn-primary">Contactez nous</a>
           </div>
         </div>
       </div>
