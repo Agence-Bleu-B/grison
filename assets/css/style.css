@@ -1,0 +1,146 @@
+/*
+LOGO
+Bleu Foncé #006699
+Bleu Clair #3399cc
+Gris  #999999
+
+Fond Plaquette Grison Couleurs Web
+Bleu Clair #99ccff
+Gris Clair #cccccc
+
+Texte : #333
+  */
+
+body{
+  background-color: #CCCCCC;
+}
+header{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+header h1{
+  margin: 0;
+}
+header h1 + div{
+  margin-top: 20px;
+}
+header nav a{
+  padding-top: 20px;
+  color: #333;
+}
+header nav a:hover{
+  text-decoration: none;
+  color: #333;
+}
+header nav a::after{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+}
+/*#slider{
+  max-height: 500px;
+  overflow: hidden;
+}
+#slider img{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}*/
+#slider::after{
+  content: "";
+  width: 100%;
+  height: 7px;
+}
+.carousel-inner > .item > img{
+  min-height: 200px;
+}
+.carousel-caption{
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: unset;
+  right: unset;
+  left: 20%;
+  top: 30px;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  .carousel-caption{
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: unset;
+  }
+}
+header nav a.actif, header nav a.actif:hover{
+  color: #006699;
+}
+header nav a:hover::after{
+  background-color: #999999;
+}
+header nav a.actif::after, header nav a.actif:hover::after, #slider::after{
+  background-color: #006699;
+}
+
+#content .products-show, footer{
+  background-color: #90afcf;
+}
+#content .products-show div{
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#content .products-show img{
+  /*max-width: 250px;*/
+}
+#content .row > h3 + div > a > img + p{
+  position: absolute;
+  display: inline;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+footer img{
+  max-height: 185px;
+}
+
+blockquote{
+  border-color: #999999;
+  font-weight: bold;
+}
+.title{
+  color: #006699;
+  font-weight: bold;
+}
+.lity-content img{
+  max-height: 100vh !important;
+}
+/*UTILS*/
+
+.vertical-align-item{ /* Mettre des commentaires <!-- --> entre les items */
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+
+/* Css pour Embed Google Map responsive*/
+.map_responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map_responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
