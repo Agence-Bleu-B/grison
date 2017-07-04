@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-md-12 col-lg-8 col-lg-offset-2">
       <h2 class="title">Nos Références</h2>
       <br>
-
+      <?php if (isset($countCH) && $countCH != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Centres Hospitaliers
@@ -69,7 +69,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
+      <?php } ?>
       <br>
+      <?php if (isset($countCH) && $countIC != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Immeubles et Centres Commerciaux
@@ -89,7 +91,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="badge">Carré Feydeau - Nantes</span>
         </div>
       </div>
+      <?php } ?>
       <br>
+      <?php if (isset($countCH) && $countCC != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Centres Culturels
@@ -113,7 +117,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <span class="badge">Les Ateliers des Capucins à Brest</span>
         </div>
       </div>
-
+      <?php } ?>
     </div>
 
   </div>
