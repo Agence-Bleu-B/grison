@@ -82,16 +82,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
   <div class="row products-show">
     <div class="col-md-12 col-lg-8 col-lg-offset-2">
-      <img src="product3.png" class="img-responsive">
-      <img src="product2.png" class="img-responsive">
-      <img src="product1.png" class="img-responsive">
+      <img src="<?php echo img_url("product3.png"); ?>" class="img-responsive">
+      <img src="<?php echo img_url("product2.png"); ?>" class="img-responsive">
+      <img src="<?php echo img_url("product1.png"); ?>" class="img-responsive">
     </div>
   </div>
   <div class="row">
     <div class="col-md-12 col-lg-8 col-lg-offset-2">
       <br>
       <p class="lead title col-md-6 text-justify vertical-align-item">Notre société travaille dans divers secteurs d’activité (Hospitalier, Immobilier, Ephad, Industrie, Lycée) et nous intervenons dans toute la France.</p><!--
-      --><img src="carte.png" class="col-md-6 img-responsive vertical-align-item">
+      --><img src="<?php echo img_url("carte.png"); ?>" class="col-md-6 img-responsive vertical-align-item">
     </div>
   </div>
 </section>
