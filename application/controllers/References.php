@@ -21,7 +21,8 @@ class References extends CI_Controller {
 		foreach ($data2["listCH"] as $key => $value) {
 			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listCH"][$i]["id"].'"';
 			$query2 = $this->db->query($string);
-			if ($query2->num_rows() != 0) {
+			$data2["listCH"][$i]['nbtof'] = $query2->num_rows();
+			if ($data2["listCH"][$i]['nbtof'] != 0) {
 				$data2["listCH"][$i]['photos'] = $query2->result_array();
 			}
 			else{
@@ -30,15 +31,42 @@ class References extends CI_Controller {
 
 			$i++;
 		}
-		var_dump($data2["listCH"]);
 		//imeuble et centre comlmerciaux
 		$query = $this->db->query('SELECT * FROM immeuble_et_cc');
 		$data2['countIC'] = $query->num_rows();
 		$data2['listIC'] = $query->result_array();
+		$i=0;
+		foreach ($data2["listIC"] as $key => $value) {
+			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listIC"][$i]["id"].'"';
+			$query2 = $this->db->query($string);
+			$data2["listIC"][$i]['nbtof'] = $query2->num_rows();
+			if ($data2["listIC"][$i]['nbtof'] != 0) {
+				$data2["listIC"][$i]['photos'] = $query2->result_array();
+			}
+			else{
+				$data2["listIC"][$i]['photos'][0] = 'noPics.png';
+			}
+
+			$i++;
+		}
 		//centre culturels
 		$query = $this->db->query('SELECT * FROM centre_culturels');
 		$data2['countCC'] = $query->num_rows();
 		$data2['listCC'] = $query->result_array();
+		$i=0;
+		foreach ($data2["listCC"] as $key => $value) {
+			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listCC"][$i]["id"].'"';
+			$query2 = $this->db->query($string);
+			$data2["listCC"][$i]['nbtof'] = $query2->num_rows();
+			if ($data2["listCC"][$i]['nbtof'] != 0) {
+				$data2["listCC"][$i]['photos'] = $query2->result_array();
+			}
+			else{
+				$data2["listCC"][$i]['photos'][0] = 'noPics.png';
+			}
+
+			$i++;
+		}
 		//chargement vues
 		$this->load->view('common/head');
 		$this->load->view('common/header',$this->data);
