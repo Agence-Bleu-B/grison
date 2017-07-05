@@ -20,29 +20,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <?php $i = 0; foreach ($listCH as $key => $value) { ?>
         <div <?php if($i == 0){echo 'class="tab-pane active"';} else{echo 'class="tab-pane"';} ?> id="<?php echo 'tab_ch'.$value['id']; ?>">
           <div class="col-md-3">
-            <a href="#sliderCat1" data-lity>
-              <img src="cro.png" class="img-responsive thumbnail">
+            <a href="#sliderCat<?php echo $i; ?>" data-lity>
+              <img src="<?php echo img_url($listCH[0]['photos'][0]); ?>" class="img-responsive thumbnail">
               <p>Gallerie</p>
             </a>
           </div>
-          <div id="sliderCat1" class="lity-hide">
-            <div id="carousel-cat1" class="carousel slide" data-ride="carousel">
+          <div id="sliderCat<?php echo $i; ?>" class="lity-hide">
+            <div id="carousel-cat<?php echo $i; ?>" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#carousel-cat1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-cat1" data-slide-to="1"></li>
+                <li data-target="#carousel-cat<?php echo $i; ?>" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-cat<?php echo $i; ?>" data-slide-to="1"></li>
               </ol>
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img src="cro1.jpg" class="img-responsive">
+                  <img src="<?php echo img_url($listCH[0]['photos'][0]); ?>" class="img-responsive">
                   <div class="carousel-caption">
                     Hopital de Crozon
                   </div>
                 </div>
                 <div class="item">
-                  <img src="cro2.jpg" class="img-responsive">
+                  <img src="<?php echo img_url($listCH[0]['photos'][0]); ?>" class="img-responsive">
                   <div class="carousel-caption">
                     Hopital de Crozon
                   </div>
@@ -50,11 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
 
               <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-cat1" role="button" data-slide="prev">
+              <a class="left carousel-control" href="#carousel-cat<?php echo $i; ?>" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a class="right carousel-control" href="#carousel-cat1" role="button" data-slide="next">
+              <a class="right carousel-control" href="#carousel-cat<?php echo $i; ?>" role="button" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
           <div class="col-md-5">
             <h4><?php echo $value['titre']; ?></h4>
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-justify"><?php echo $value['texte'] ; ?></p>
           </div>
         </div>
         <?php $i++; } ?>
@@ -87,6 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           Immeubles et Centres Commerciaux
           <hr>
         </h3>
+        <!-- debut premier bloc -->
         <div class="col-md-3">
           <a href="#" data-lity>
             <img src="http://placehold.it/350x250" class="img-responsive thumbnail">
@@ -96,12 +97,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <h4>Centre Commercial Alma (Rennes)</h4>
           <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
+        <!-- fin premier bloc -->
+        <!-- debut second bloc -->
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
-          <?php foreach ($listIC as $key => $value) { ?>
-          <span class="badge"><?php echo $value['titre']; ?></span>
-          <?php } ?>
+          <?php $i = 0; foreach ($listIC as $key => $value) { ?>
+          <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_ic'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
+          <?php $i++; } ?>
         </div>
+        <!-- fin second bloc -->
       </div>
       <?php } ?>
       <br>
@@ -122,9 +126,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
-          <?php foreach ($listCC as $key => $value) { ?>
-          <span class="badge"><?php echo $value['titre']; ?></span>
-          <?php } ?>
+          <?php $i = 0; foreach ($listCC as $key => $value) { ?>
+          <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_cc'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
+          <?php $i++; } ?>
         </div>
       </div>
       <?php } ?>

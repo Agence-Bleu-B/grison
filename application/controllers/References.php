@@ -17,7 +17,20 @@ class References extends CI_Controller {
 		$query = $this->db->query('SELECT * FROM centre_hospitalier');
 		$data2['countCH'] = $query->num_rows();
 		$data2['listCH'] = $query->result_array();
-		
+		$i=0;
+		foreach ($data2["listCH"] as $key => $value) {
+			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listCH"][$i]["id"].'"';
+			$query2 = $this->db->query($string);
+			if ($query2->num_rows() != 0) {
+				$data2["listCH"][$i]['photos'] = $query2->result_array();
+			}
+			else{
+				$data2["listCH"][$i]['photos'][0] = 'noPics.png';
+			}
+
+			$i++;
+		}
+		var_dump($data2["listCH"]);
 		//imeuble et centre comlmerciaux
 		$query = $this->db->query('SELECT * FROM immeuble_et_cc');
 		$data2['countIC'] = $query->num_rows();
