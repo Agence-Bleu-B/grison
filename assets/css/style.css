@@ -107,6 +107,23 @@ header nav a.actif::after, header nav a.actif:hover::after, #slider::after{
   color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+#content .nav > li > a{
+  padding: unset;
+  color: #fff;
+}
+#content .nav > li > a:hover{
+  background-color: unset;
+}
+#content .nav > li{
+  display: inline-block;
+}
+#content .nav > li:hover{
+  background-color: #888888;
+}
+#content .nav > li.active{
+  background-color: #337ab7;
+}
 footer img{
   max-height: 185px;
 }
