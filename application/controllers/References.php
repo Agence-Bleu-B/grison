@@ -22,8 +22,13 @@ class References extends CI_Controller {
 			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listCH"][$i]["id"].'"';
 			$query2 = $this->db->query($string);
 			$data2["listCH"][$i]['nbtof'] = $query2->num_rows();
-			if ($data2["listCH"][$i]['nbtof'] != 0) {
-				$data2["listCH"][$i]['photos'] = $query2->result_array();
+			if ($data2["listCH"][$i]['nbtof'] != 0) { 
+				$j =0;
+				$array = array();
+				foreach ($query2->result_array() as $key => $value) {
+					$array = $value['source'];
+					$data2["listCH"][$i]['photos'][$j] = $array;$j++;
+				}
 			}
 			else{
 				$data2["listCH"][$i]['photos'][0] = 'noPics.png';
@@ -37,11 +42,17 @@ class References extends CI_Controller {
 		$data2['listIC'] = $query->result_array();
 		$i=0;
 		foreach ($data2["listIC"] as $key => $value) {
-			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listIC"][$i]["id"].'"';
+			$string = 'SELECT * FROM real_medias2 WHERE id_real = "'.$data2["listIC"][$i]["id"].'"';
 			$query2 = $this->db->query($string);
 			$data2["listIC"][$i]['nbtof'] = $query2->num_rows();
 			if ($data2["listIC"][$i]['nbtof'] != 0) {
-				$data2["listIC"][$i]['photos'] = $query2->result_array();
+				$j =0;
+				$array2 = array();
+				foreach ($query2->result_array() as $key => $value) {
+					$array2 = $value['source'];
+					$data2["listIC"][$i]['photos'][$j] = $array2;
+					$j++;
+				}
 			}
 			else{
 				$data2["listIC"][$i]['photos'][0] = 'noPics.png';
@@ -55,11 +66,17 @@ class References extends CI_Controller {
 		$data2['listCC'] = $query->result_array();
 		$i=0;
 		foreach ($data2["listCC"] as $key => $value) {
-			$string = 'SELECT * FROM real_medias WHERE id_real = "'.$data2["listCC"][$i]["id"].'"';
+			$string = 'SELECT * FROM real_medias3 WHERE id_real = "'.$data2["listCC"][$i]["id"].'"';
 			$query2 = $this->db->query($string);
 			$data2["listCC"][$i]['nbtof'] = $query2->num_rows();
 			if ($data2["listCC"][$i]['nbtof'] != 0) {
-				$data2["listCC"][$i]['photos'] = $query2->result_array();
+				$j =0;
+				$array3 = array();
+				foreach ($query2->result_array() as $key => $value) {
+					$array3 = $value['source'];
+					$data2["listCC"][$i]['photos'][$j] = $array3;
+					$j++;
+				}
 			}
 			else{
 				$data2["listCC"][$i]['photos'][0] = 'noPics.png';
