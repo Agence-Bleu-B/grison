@@ -139,9 +139,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- debut second bloc -->
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
+          <ul class="nav nav-pills nav-stacked">
           <?php $i = 0; foreach ($listIC as $key => $value) { ?>
           <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_ic'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
           <?php $i++; } ?>
+          </ul>
         </div>
         <!-- fin second bloc -->
       </div>
@@ -206,9 +208,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- second bloc -->
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
+          <ul class="nav nav-pills nav-stacked">
           <?php $i = 0; foreach ($listCC as $key => $value) { ?>
           <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_cc'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
           <?php $i++; } ?>
+          </ul>
         </div>
       </div>
       <?php } ?>
