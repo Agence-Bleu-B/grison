@@ -11,8 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
          <!-- /. ROW  -->
       	<hr />
       	<!-- contenu a partir d'ici -->
-      	<div class="row text-center pad-top">
-          	
+      	<div class="row pad-top">
+          	<div class="col-md-12" ><h3>Centres hospitaliers</h3></div>
+            <div class="col-md-12" ><h3>Immeubles et centres commerciaux</h3></div>
+            <div class="col-md-12" ><h3>Centres culturels</h3></div>
       	</div>
       	<!-- /. contenu  -->
          <!-- /. ROW  -->           
