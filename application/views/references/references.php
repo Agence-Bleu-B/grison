@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="col-md-12 col-lg-8 col-lg-offset-2">
       <h2 class="title">Nos Références</h2>
       <br>
-      <?php if (isset($countCH) && $countCH != 0) { ?>
+      <?php if (isset($CH['countCH']) && $CH['countCH'] != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Centres Hospitaliers
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <!-- debut du premeir bloc -->
         <div class="tab-content">
-        <?php $i = 0; foreach ($listCH as $key => $value) { ?>
+        <?php $i = 0; foreach ($CH['listCH'] as $key => $value) { ?>
         <div <?php if($i == 0){echo 'class="tab-pane active"';} else{echo 'class="tab-pane"';} ?> id="<?php echo 'tab_ch'.$value['id']; ?>">
           <div class="col-md-3">
             <a href="#sliderCat1<?php echo $i; ?>" data-lity>
@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
 
               <!-- Controls -->
-              <?php if ($listCH[$i]['nbtof'] > 1) { ?>
+              <?php if ($CH['listCH'] [$i]['nbtof'] > 1) { ?>
               <a class="left carousel-control" href="#carousel-cat1<?php echo $i; ?>" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
           <ul class="nav nav-pills nav-stacked">
-          <?php $i = 0; foreach ($listCH as $key => $value) { ?>
+          <?php $i = 0; foreach ($CH['listCH'] as $key => $value) { ?>
           <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_ch'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
           <?php $i++; } ?>
           </ul>
@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <?php } ?>
       <br>
-      <?php if (isset($countIC) && $countIC != 0) { ?>
+      <?php if (isset($IC['countIC']) && $IC['countIC'] != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Immeubles et Centres Commerciaux
@@ -87,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </h3>
         <!-- debut premier bloc -->
         <div class="tab-content">
-        <?php $i = 0; foreach ($listIC as $key => $value) { ?>
+        <?php $i = 0; foreach ($IC['listIC'] as $key => $value) { ?>
         <div <?php if($i == 0){echo 'class="tab-pane active"';} else{echo 'class="tab-pane"';} ?> id="<?php echo 'tab_ic'.$value['id']; ?>">
           <div class="col-md-3">
             <a href="#sliderCat2<?php echo $i; ?>" data-lity>
@@ -116,7 +116,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
 
               <!-- Controls -->
-              <?php if ($listIC[$i]['nbtof'] > 1) { ?>
+              <?php if ($IC['listIC'] [$i]['nbtof'] > 1) { ?>
               <a class="left carousel-control" href="#carousel-cat2<?php echo $i; ?>" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -140,7 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
           <ul class="nav nav-pills nav-stacked">
-          <?php $i = 0; foreach ($listIC as $key => $value) { ?>
+          <?php $i = 0; foreach ($IC['listIC'] as $key => $value) { ?>
           <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_ic'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
           <?php $i++; } ?>
           </ul>
@@ -149,7 +149,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <?php } ?>
       <br>
-      <?php if (isset($countCH) && $countCC != 0) { ?>
+      <?php if (isset($CC['countCC']) && $CC['countCC'] != 0) { ?>
       <div class="row">
         <h3 class="col-xs-12">
           Centres Culturels
@@ -157,7 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </h3>
         <!-- premeir bloc -->
         <div class="tab-content">
-        <?php $i = 0; foreach ($listCC as $key => $value) { ?>
+        <?php $i = 0; foreach ($CC['listCC'] as $key => $value) { ?>
         <div <?php if($i == 0){echo 'class="tab-pane active"';} else{echo 'class="tab-pane"';} ?> id="<?php echo 'tab_cc'.$value['id']; ?>">
           <div class="col-md-3">
             <a href="#sliderCat3<?php echo $i; ?>" data-lity>
@@ -186,7 +186,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
 
               <!-- Controls -->
-              <?php if ($listCC[$i]['nbtof'] > 1) { ?>
+              <?php if ($CC['listCC'][$i]['nbtof'] > 1) { ?>
               <a class="left carousel-control" href="#carousel-cat3<?php echo $i; ?>" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -209,7 +209,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="col-md-4">
           <h4 class="title">Autres projets :</h4>
           <ul class="nav nav-pills nav-stacked">
-          <?php $i = 0; foreach ($listCC as $key => $value) { ?>
+          <?php $i = 0; foreach ($CC['listCC']  as $key => $value) { ?>
           <li role="presentation" <?php if($i == 0){echo 'class="active badge"';} else{echo 'class="badge"';} ?>><a href="<?php echo '#tab_cc'.$value['id']; ?>" data-toggle="pill" ><span class=""><?php echo $value['titre']; ?></span></a></li>
           <?php $i++; } ?>
           </ul>
