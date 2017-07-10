@@ -44,28 +44,33 @@ class Admin extends CI_Controller {
 	}
 	public function pages()
 	{
-		//affichage page selon connection
-		if ($this->isco) {
-			$this->load->view('admin/header',$this->data);
-			$this->load->view('admin/pages',$this->data2);
-		}
-		else{
-			$this->load->view('admin/header-reg',$this->data);
-			$this->load->view('admin/register',$this->data2);
-		}
-       $this->load->view('admin/footer');
+		//verif si connecté
+	    if (!$this->isco) {
+	    	redirect('/admin', 'refresh');
+	    }
+
+
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin/pages',$this->data2);
+       	$this->load->view('admin/footer');
 	}
 	public function realisations()
 	{
-		//affichage page selon connection
-		if ($this->isco) {
-			$this->load->view('admin/header',$this->data);
-			$this->load->view('admin/realisations',$this->data2);
-		}
-		else{
-			$this->load->view('admin/header-reg',$this->data);
-			$this->load->view('admin/register',$this->data2);
-		}
-       $this->load->view('admin/footer');
+		//verif si connecté
+	    if (!$this->isco) {
+	    	redirect('/admin', 'refresh');
+	    }
+	    $this->load->model('references_model');
+		//centre hsopitaliers
+		$this->data2['CH'] = $this->references_model->getLists('centre_hospitalier','real_medias','CH');
+		//imeuble et centre commerciaux
+		$this->data2['IC'] = $this->references_model->getLists('immeuble_et_cc','real_medias2','IC');
+		//centre culturels
+		$this->data2['CC'] = $this->references_model->getLists('centre_culturels','real_medias3','CC');
+
+		//affichage page 
+		$this->load->view('admin/header',$this->data);
+		$this->load->view('admin/realisations',$this->data2);
+       	$this->load->view('admin/footer');
 	}
 }

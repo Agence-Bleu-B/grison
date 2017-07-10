@@ -16,7 +16,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous">
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="<?php echo js_url("lity.min") ?>" charset="utf-8"></script>
 <script type="text/javascript" src="<?php echo js_url('admin');?>"></script>
 <?php if ($pagecours == "creation" || $pagecours == 'modifactu' ) {?>
 	<script type="text/javascript" src="<?php echo js_url('tinymce/tinymce.min');?>"></script>
