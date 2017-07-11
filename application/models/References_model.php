@@ -58,4 +58,13 @@ class References_model extends CI_Model
     	$this->db->delete($table, array('id' => $id));
     	$this->db->delete($tablemedias, array('id_real' => $id));
     }
+    public function modifReal($table,$post){
+    	$data = array(
+        'titre' => $post['titre'],
+        'texte' => $post['texte']
+		);
+
+		$this->db->where('id', $post['id']);
+		$this->db->update($table , $data);
+    }
 }

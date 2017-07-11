@@ -82,7 +82,15 @@ class Admin extends CI_Controller {
 	    	$this->references_model->supReal('centre_culturels','real_medias3',$_POST['id']);
 	    }
 	    //si modifi textes
-
+		if (isset($_POST['modifCH'])) {
+	    	$this->references_model->modifReal('centre_hospitalier',$_POST);
+	    }
+	    if (isset($_POST['modifIC'])) {
+	    	$this->references_model->modifReal('immeuble_et_cc',$_POST);
+	    }
+	    if (isset($_POST['modifCC'])) {
+	    	$this->references_model->modifReal('centre_culturels',$_POST);
+	    }
 	    //si modif images
 
 	    //chargement données
