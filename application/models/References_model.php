@@ -53,4 +53,9 @@ class References_model extends CI_Model
 
 		$this->db->insert($table, $data);
     }
+
+    public function supReal($table,$tablemedias,$id){
+    	$this->db->delete($table, array('id' => $id));
+    	$this->db->delete($tablemedias, array('id_real' => $id));
+    }
 }

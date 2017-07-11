@@ -71,9 +71,16 @@ class Admin extends CI_Controller {
 	    if (isset($_POST['newCC'])) {
 	    	$this->references_model->newReal($_POST,'centre_culturels');
 	    }
-	    
-	    //si suppression
-
+    	//si suppression
+	    if (isset($_POST['supressionCH'])) {
+	    	$this->references_model->supReal('centre_hospitalier','real_medias',$_POST['id']);
+	    }
+	    if (isset($_POST['supressionIC'])) {
+	    	$this->references_model->supReal('immeuble_et_cc','real_medias2',$_POST['id']);
+	    }
+	    if (isset($_POST['supressionCC'])) {
+	    	$this->references_model->supReal('centre_culturels','real_medias3',$_POST['id']);
+	    }
 	    //si modifi textes
 
 	    //si modif images

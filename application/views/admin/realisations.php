@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a class="col-md-4" href="#CH<?php echo $value['id']; ?>" data-lity ><?php echo $value['titre']; ?></a><a href="#CHim<?php echo $value['id']; ?>" class="col-md-1"  data-lity >Images</a><a href="#CHsup<?php echo $value['id']; ?>" class="col-md-6" data-lity >Supprimer</a><br>
             <!-- debut bloc textes -->
             <div id="CH<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
-              <form method="post" action="">
+              <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <div class="col-md-12" >Titre</div>
                 <div class="col-md-12" ><input type="text" name="titre" style="width: 100%;margin-bottom: 15px;" value="<?php echo $value['titre']; ?>"></div>
@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- fin bloc textes -->
             <!-- debut bloc photos -->
             <div id="CHim<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
-              <form method="post" action="">
+              <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <div class="col-md-12" ><input type="submit" name="modifCH+" value="modifier"></div>
               </form>
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- fin bloc photos -->
             <!-- debut bloc suppression  -->
             <div id="CHsup<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
-              <form method="post" action="">
+              <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <div class="col-md-12" >Voulez vous vraiment supprimer cette entrée ?</div>
                 <div class="col-md-12" ><input type="submit" name="supressionCH" value="Supprimer"></div>
