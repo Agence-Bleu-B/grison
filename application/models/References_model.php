@@ -44,4 +44,13 @@ class References_model extends CI_Model
 
 		return $return;
     }
+
+    public function newReal($post,$table){
+    	$data = array(
+        'titre' => $post['titre'],
+        'texte' => $post['texte']
+		);
+
+		$this->db->insert($table, $data);
+    }
 }

@@ -61,6 +61,24 @@ class Admin extends CI_Controller {
 	    	redirect('/admin', 'refresh');
 	    }
 	    $this->load->model('references_model');
+	    //si creation
+	    if (isset($_POST['newCH'])) {
+	    	$this->references_model->newReal($_POST,'centre_hospitalier');
+	    }
+	    if (isset($_POST['newIC'])) {
+	    	$this->references_model->newReal($_POST,'immeuble_et_cc');
+	    }
+	    if (isset($_POST['newCC'])) {
+	    	$this->references_model->newReal($_POST,'centre_culturels');
+	    }
+	    
+	    //si suppression
+
+	    //si modifi textes
+
+	    //si modif images
+
+	    //chargement données
 		//centre hsopitaliers
 		$this->data2['CH'] = $this->references_model->getLists('centre_hospitalier','real_medias','CH');
 		//imeuble et centre commerciaux
