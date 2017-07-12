@@ -67,4 +67,21 @@ class References_model extends CI_Model
 		$this->db->where('id', $post['id']);
 		$this->db->update($table , $data);
     }
+    public function supPhoto($table, $post){
+    	foreach ($post['tosup'] as $key => $value) {
+    		//supprimer image
+    		$filename = img_url($value);
+    		$source = $value;
+    		unlink($filename);
+    		//supprimer en bdd
+    		$this->db->delete($table, array('source' => $source));
+    	}
+    	
+
+    }
+    public function addPhoto($table, $post){
+    	//enregistre images
+
+    	//si ok mettre en bdd
+    }
 }

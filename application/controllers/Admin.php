@@ -92,7 +92,31 @@ class Admin extends CI_Controller {
 	    	$this->references_model->modifReal('centre_culturels',$_POST);
 	    }
 	    //si modif images
-
+	    if (isset($_POST['supphCH'])) {
+	    	if (isset($_POST['tosup'])) {
+	    		$this->references_model->supPhoto('real_medias',$_POST);
+	    	}
+	    }
+	    if (isset($_POST['supphIC'])) {
+	    	if (isset($_POST['tosup'])) {
+	    		$this->references_model->supPhoto('real_medias2',$_POST);
+	    	}
+	    }
+	    if (isset($_POST['supphCC'])) {
+	    	if (isset($_POST['tosup'])) {
+	    		$this->references_model->supPhoto('real_medias3',$_POST);
+	    	}
+	    }
+	    //si upload images
+	    if (isset($_POST['addphCH'])) {
+	    	$this->references_model->addPhoto('real_medias',$_POST);
+	    }
+	    if (isset($_POST['addphIC'])) {
+	    	$this->references_model->addPhoto('real_medias2',$_POST);
+	    }
+	    if (isset($_POST['addphCC'])) {
+	    	$this->references_model->addPhoto('real_medias3',$_POST);
+	    }
 	    //chargement données
 		//centre hsopitaliers
 		$this->data2['CH'] = $this->references_model->getLists('centre_hospitalier','real_medias','CH');

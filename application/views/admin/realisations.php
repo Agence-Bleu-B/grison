@@ -42,8 +42,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- debut bloc photos -->
             <div id="CHim<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
+              <!-- form supp -->
+                <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
+                <div class="form-group">
+                  <?php $v=0; foreach ($value['photos'] as $cle => $photo) { if($photo != 'noPics.png'){ ?>
+                    
+                  <div class="col-md-3" style="width: auto;"><label class="btn btn-danger" style="padding: 0px;margin-bottom: 10px;"><img src="<?php echo img_url($photo); ?>" alt="..." class="img-thumbnail img-responsive img-check" style="max-width: 200px;" ><input type="checkbox" name="tosup[]" id="item<?php echo $v; ?>" value="<?php echo $photo ; ?>" class="hidden" autocomplete="off"></label></div>
+                
+                <?php $v++;} } ?>
+                </div>
+                <div class="col-md-12" ><input type="submit" name="supphCH" value="supprimer"></div>
+              </form>
+
+              <!-- form add -->
+              <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                <div class="col-md-12" ><input type="submit" name="modifCH+" value="modifier"></div>
+                <div class="col-md-12" ><input type="submit" name="addphCH" value="upload"></div>
               </form>
             </div>
             <!-- fin bloc photos -->

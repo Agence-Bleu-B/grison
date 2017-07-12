@@ -36,5 +36,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  });
 	</script>
 <?php } ?>
+<script type="text/javascript">$(document).ready(function(e){
+        $(".img-check").click(function(){
+        $(this).toggleClass("check");
+      });
+  });</script>
 </body>
 </html>
