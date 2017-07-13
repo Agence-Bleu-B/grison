@@ -55,8 +55,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </form>
 
               <!-- form add -->
-              <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
+              <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
+                <input type="file" name="photo">
                 <div class="col-md-12" ><input type="submit" name="addphCH" value="upload"></div>
               </form>
             </div>

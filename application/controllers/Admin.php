@@ -110,6 +110,7 @@ class Admin extends CI_Controller {
 	    //si upload images
 	    if (isset($_POST['addphCH'])) {
 	    	$this->references_model->addPhoto('real_medias',$_POST);
+	    	
 	    }
 	    if (isset($_POST['addphIC'])) {
 	    	$this->references_model->addPhoto('real_medias2',$_POST);

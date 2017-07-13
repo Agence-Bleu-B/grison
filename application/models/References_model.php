@@ -56,7 +56,7 @@ class References_model extends CI_Model
 
     public function supReal($table,$tablemedias,$id){
     	$this->db->delete($table, array('id' => $id));
-    	$this->db->delete($tablemedias, array('id_real' => $id));
+    	$this->db->delete($tablemedias, array('id_real' => $id)); //rajouter effacement photos auto
     }
     public function modifReal($table,$post){
     	$data = array(
@@ -70,18 +70,37 @@ class References_model extends CI_Model
     public function supPhoto($table, $post){
     	foreach ($post['tosup'] as $key => $value) {
     		//supprimer image
-    		$filename = img_url($value);
+    		$filename = './assets/images/'.$value;
     		$source = $value;
     		unlink($filename);
     		//supprimer en bdd
     		$this->db->delete($table, array('source' => $source));
     	}
-    	
-
     }
     public function addPhoto($table, $post){
     	//enregistre images
+    	//load library
+	    	$this->load->library('upload');
+	    	// config upload
+	    	$config['upload_path'] = './assets/images';
+	    	$config['allowed_types'] = 'gif|jpg|png';
+        	$config['max_size']    = '0';
+        	$this->upload->initialize($config);
+        	if (!$this->upload->do_upload('photo')) {
+        		$test['message'] = "echec";$test['message2'] = array('error' => $this->upload->display_errors());
+        	}
+        	else{
+        		$test['message'] = "fichier correctement envoyé";
+        		//si ok mettre en bdd
+        		$array = array('upload_data' => $this->upload->data());
+        		$name = $array['upload_data']['file_name'];
+        		$data = array(
+		        'id_real' => $post['id'],
+		        'source' => $name
+				);
 
-    	//si ok mettre en bdd
+				$this->db->insert($table, $data);
+        	}
+    	
     }
 }
