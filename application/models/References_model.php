@@ -55,8 +55,18 @@ class References_model extends CI_Model
     }
 
     public function supReal($table,$tablemedias,$id){
+    	//recuperation du nom des photos en bdd
+    	$str = 'SELECT * FROM '.$tablemedias.' WHERE id_real ='.$id.' ';
+    	$query = $this->db->query($str);
+		$fichiers = $query->result_array();
+		//effacement physique
+		foreach ($fichiers as $key => $value) {
+			$filename = './assets/images/'.$value['source'];
+    		unlink($filename);
+		}
+    	//effacement bdd
     	$this->db->delete($table, array('id' => $id));
-    	$this->db->delete($tablemedias, array('id_real' => $id)); //rajouter effacement photos auto
+    	$this->db->delete($tablemedias, array('id_real' => $id));
     }
     public function modifReal($table,$post){
     	$data = array(
