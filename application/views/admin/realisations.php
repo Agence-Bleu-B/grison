@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-12" ><input type="text" name="titre" style="width: 100%;margin-bottom: 15px;" ></div>
                 <div class="col-md-12" >Texte</div>
                 <div class="col-md-12" ><textarea name="texte" style="width: 100%;height: 250px;margin-bottom: 15px;" ></textarea></div>
-                <div class="col-md-12" ><input type="submit" name="newCH" value="Créer"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" name="newCH" value="Créer"></div>
               </form>
             </div>
             <!-- fin bloc new textes -->
@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-md-12" ><input type="text" name="titre" style="width: 100%;margin-bottom: 15px;" value="<?php echo $value['titre']; ?>"></div>
                 <div class="col-md-12" >Texte</div>
                 <div class="col-md-12" ><textarea name="texte" style="width: 100%;height: 250px;margin-bottom: 15px;" ><?php echo $value['texte']; ?></textarea></div>
-                <div class="col-md-12" ><input type="submit" name="modifCH" value="modifier"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" name="modifCH" value="modifier"></div>
               </form>
             </div>
             <!-- fin bloc textes -->
@@ -43,6 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="CHim<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
               <!-- form supp -->
+              <div class="col-md-12">Suppression</div>
                 <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                 <div class="form-group">
                   <?php $v=0; foreach ($value['photos'] as $cle => $photo) { if($photo != 'noPics.png'){ ?>
@@ -51,14 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <?php $v++;} } ?>
                 </div>
-                <div class="col-md-12" ><input type="submit" name="supphCH" value="supprimer"></div>
+                <div class="col-md-12" ><input type="submit" style="margin-bottom: 20px;" class="btn btn-default" style="margin-top: 20px;" name="supphCH" value="supprimer"></div>
               </form>
 
               <!-- form add -->
+              
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+              <div class="col-md-12">Ajout</div>
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <input type="file" name="photo">
-                <div class="col-md-12" ><input type="submit" name="addphCH" value="upload"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="addphCH" value="envoyer"></div>
               </form>
             </div>
             <!-- fin bloc photos -->
@@ -67,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <div class="col-md-12" >Voulez vous vraiment supprimer cette entrée ?</div>
-                <div class="col-md-12" ><input type="submit" name="supressionCH" value="Supprimer"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" name="supressionCH" value="Supprimer"></div>
               </form>
             </div>
             <!-- fin bloc suppression -->
@@ -103,6 +106,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="ICim<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
               <!-- form supp -->
+              <div class="col-md-12">Suppression</div>
                 <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                 <div class="form-group">
                   <?php $v=0; foreach ($value['photos'] as $cle => $photo) { if($photo != 'noPics.png'){ ?>
@@ -111,14 +115,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <?php $v++;} } ?>
                 </div>
-                <div class="col-md-12" ><input type="submit" name="supphIC" value="supprimer"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-bottom: 20px;" name="supphIC" value="supprimer"></div>
               </form>
 
               <!-- form add -->
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+              <div class="col-md-12">Ajout</div>
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <input type="file" name="photo">
-                <div class="col-md-12" ><input type="submit" name="addphIC" value="upload"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="addphIC" value="envoyer"></div>
               </form>
             </div>
             <!-- fin bloc photos -->
@@ -163,6 +168,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div id="CCim<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
               <!-- form supp -->
+              <div class="col-md-12">Suppression</div>
                 <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                 <div class="form-group">
                   <?php $v=0; foreach ($value['photos'] as $cle => $photo) { if($photo != 'noPics.png'){ ?>
@@ -171,14 +177,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
                 <?php $v++;} } ?>
                 </div>
-                <div class="col-md-12" ><input type="submit" name="supphCC" value="supprimer"></div>
+                <div class="col-md-12" ><input type="submit" style="margin-bottom: 20px;" class="btn btn-default" name="supphCC" value="supprimer"></div>
               </form>
 
               <!-- form add -->
               <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+              <div class="col-md-12">Ajout</div>
                 <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
                 <input type="file" name="photo">
-                <div class="col-md-12" ><input type="submit" name="addphCC" value="upload"></div>
+                <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="addphCC" value="envoyer"></div>
               </form>
             </div>
             <!-- fin bloc photos -->

@@ -10,20 +10,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <br>
 
       <div class="row">
-        <form class="col-xs-12 col-md-6">
+        <form class="col-xs-12 col-md-6" method="post" action="">
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <input type="email" class="form-control" id="exampleInputEmail1" name="sender" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Sujet</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Sujet">
+            <input type="text" class="form-control" id="exampleInputPassword1" name="sujet" placeholder="Sujet">
           </div>
           <div class="form-group">
             <label for="exampleText">Message</label><br>
             <textarea class="form-control" rows="3" id="exampleText" name="msg" placeholder="Message"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Envoyer</button>
+          <button type="submit" name="envoi" class="btn btn-primary">Envoyer</button>
         </form>
         <div class="col-xs-12 col-md-6">
           <div class="map_responsive">
