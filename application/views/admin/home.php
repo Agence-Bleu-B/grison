@@ -12,14 +12,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       	<hr />
       	<!-- contenu a partir d'ici -->
       	<div class="row text-center pad-top">
-          	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+          	<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
           		<div class="div-square">
 	               	<a href="<?php echo site_url('admin/pages'); ?>" >
 						        <i class="fa fa-edit fa-5x"></i>
 	          			<h4>Pages</h4>
 	          		</a>
           		</div>
-          	</div>
+          	</div> -->
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
               <div class="div-square">
                   <a href="<?php echo site_url('admin/realisations'); ?>" >
