@@ -8,12 +8,15 @@ class Contact extends CI_Controller {
     	parent::__construct();
     	$explode = explode('/', $this->uri->ruri_string());
 		$this->data['pagecours'] = $explode[0];
+		$this->datahead['pagetitre'] = "GRISON | protection passive contre l'incendie | desenfumage | contact";
+		$this->datahead['description'] = "Contactez nous : Zone Artisanale 22690 LA VICOMTÉ-SUR-RANCE,Tél : 02 96 41 99 76 - Fax : 09 89 54 36 96,Mobile : 06 50 11 06 89";
 	}
 
 	public function index()
 	{
 		if (isset($_POST['envoi'])) {
-			$mail = 'webmaster@bleu-b.com'; // Déclaration de l'adresse de destination.
+			//$mail = 'webmaster@bleu-b.com'; // Déclaration de l'adresse de destination.
+			$mail = 'eurlgrison@free.fr';
 
 			if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui présentent des bogues.
 

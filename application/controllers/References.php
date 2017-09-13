@@ -8,6 +8,8 @@ class References extends CI_Controller {
     	parent::__construct();
     	$explode = explode('/', $this->uri->ruri_string());
 		$this->data['pagecours'] = $explode[0];
+		$this->datahead['pagetitre'] = "GRISON | protection passive contre l'incendie | desenfumage | references";
+		$this->datahead['description'] = "nos réalisations en systèmes de protection passive contre l'incendie et désenfumage passif ";
 	}
 
 	public function index()
