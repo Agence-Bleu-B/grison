@@ -24,7 +24,7 @@ class References extends CI_Controller {
 		$data2['CC'] = $this->references_model->getLists('centre_culturels','real_medias3','CC');
 		
 		//chargement vues
-		$this->load->view('common/head');
+		$this->load->view('common/head',$this->datahead);
 		$this->load->view('common/header',$this->data);
 	    $this->load->view('references/references',$data2);
 	    $this->load->view('common/footer');

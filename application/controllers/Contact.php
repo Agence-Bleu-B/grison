@@ -162,7 +162,7 @@ class Contact extends CI_Controller {
 		}
 
 
-		$this->load->view('common/head');
+		$this->load->view('common/head',$this->datahead);
 		$this->load->view('common/header',$this->data);
 	    $this->load->view('contacts/contacts');
 	    $this->load->view('common/footer');
